@@ -18,3 +18,5 @@ jobs:
         with:
           version: v0.2.2
       - run: dep-doctor diagnose -p  golang -f go.mod
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
