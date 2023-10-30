@@ -17,4 +17,4 @@ jobs:
       - uses: kyoshidajp/dep-doctor@v0.2.0
         with:
           version: v0.2.0
-      - run: dep-doctor diagnose -p golang -f go.mod
+      - run: dep-doctor diagnose -p  golang -f go.mod
