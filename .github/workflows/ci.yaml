@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: kyoshidajp/dep-doctor@latest
+      - uses: kyoshidajp/dep-doctor@v0.2.3
         with:
-          version: latest
+          version: v0.2.3
       - run: dep-doctor diagnose -p  golang -f go.mod
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
