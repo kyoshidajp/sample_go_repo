@@ -1,0 +1,21 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+jobs:
+  diagnose:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: kyoshidajp/dep-doctor@latest
+        with:
+          version: latest
+      - run: |
+        dep-doctor diagnose -p golang -f go.mod
