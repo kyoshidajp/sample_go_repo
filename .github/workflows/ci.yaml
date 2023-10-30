@@ -16,5 +16,5 @@ jobs:
       - uses: actions/checkout@v4
       - uses: kyoshidajp/dep-doctor@latest
         with:
-          version: latest
+          version: v0.2.0
       - run: dep-doctor diagnose -p golang -f go.mod
