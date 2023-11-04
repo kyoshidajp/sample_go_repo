@@ -1,7 +1,7 @@
 name: cron
 on:
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
 jobs:
   diagnose:
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: kyoshidajp/dep-doctor@v0.2.3
+      - uses: kyoshidajp/dep-doctor@v1.0
       - run: dep-doctor diagnose --package golang --file go.mod
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
