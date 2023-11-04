@@ -2,6 +2,7 @@ name: cron
 on:
   schedule:
     - cron: '* * * * *'
+  workflow_dispatch:
 jobs:
   diagnose:
     name: dep-doctor
