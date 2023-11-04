@@ -1,16 +1,10 @@
-name: ci
+name: cron
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - 'README.md'
-  pull_request:
-    paths-ignore:
-      - 'README.md'
+  schedule:
+    - cron: '24 8 * * *'
 jobs:
   diagnose:
-    name: test
+    name: dep-doctor
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
