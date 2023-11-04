@@ -1,7 +1,7 @@
 name: cron
 on:
   schedule:
-    - cron: '24 8 * * *'
+    - cron: '*/1 * * * *'
 jobs:
   diagnose:
     name: dep-doctor
